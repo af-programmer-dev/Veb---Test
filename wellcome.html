@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>vebtest.uz</title>
+
+	<style>
+		body {
+			background-color: lightyellow;
+		}
+		.header {
+			background-color: red;
+			color: white;
+			position: absolute;
+			top: 20px;
+			right:  0;
+			left: 0;
+			height: 60px;
+		}
+		.button-menu {
+			background-color: black;
+			color: whitesmoke;
+			border: none;
+			border-radius: 18px;
+			width: 80px;
+			height: 30px;
+			position: absolute;
+			top: 13px;
+			left: 45px;
+		}
+		.btn-kirish {
+			background-color: whitesmoke;
+			color: darkred;
+			position: absolute;
+			top: 13px;
+			right: 5px;
+			border: none;
+			border-radius: 15px;
+			width: 70px;
+			height: 30px;
+		}
+		button:hover {
+			background-color: darkred;
+			color: white;
+			transform: scale(1.1);
+		}
+		.h-center-1 {
+			color: red;
+			margin-top: 100px;
+			font-size: 39px;
+			text-align: center;
+		}
+		.h-center-2 {
+			color: red;
+			font-size: 30px;
+			text-align: center;
+		}
+		.test-fanlar {
+			color: darkred;
+			text-align: center;
+		}
+		.btn-maqola {
+			background-color: blue;
+			color: white;
+			width: 80px;
+			height: 30px;
+			border: none;
+			border-radius: 12px;
+			position: absolute;
+			top: 13px;
+			right: 85px;
+		}
+		.btn-maqola:hover {
+			background-color: black;
+			color: red;
+			transform: scale(1.0);\
+		}
+		.btn-contact {
+			background-color: blue;
+			color: whitesmoke;
+			width: 90px;
+			height: 30px;
+			border: none;
+			border-radius: 12px;
+			position: absolute;
+			top: 13px;
+			right: 170px;
+		}
+		.btn-contact:hover {
+			background-color: black;
+			color: red;
+			transform: scale(1.0);
+		}
+		.btn-work {
+			background-color: darkred;
+			color: goldenrod;
+			width: 100px;
+			height: 31px;
+			border: none;
+			border-radius: 12px;
+			position: absolute;
+			top: 13px;
+			right: 270px;
+		}
+		.btn-work:hover {
+			background-color: black;
+			color: green;
+			transform: scale(1);
+		}
+		.emoji-matem {
+			color: blue;
+			text-align: center;
+			font-size: 90px;
+			margin-top: 10px;
+		}
+		.emoji-matn-matem {
+			font-size: 27px;
+			text-align: center;
+			margin-top: -70px;
+		}
+		.emoji-english {
+			text-align: center;
+			font-size: 90px;
+			margin-top: 10px;
+		}
+		.emoji-matn-english {
+			font-size: 27px;
+			text-align: center;
+			margin-top: -70px;
+		}
+		.emoji-biologiya {
+			text-align: center;
+			font-size: 90px;
+			margin-top: 10px;
+		}
+		.emoji-matn-bio {
+			font-size: 27px;
+			text-align: center;
+			margin-top: -70px;
+		}
+		.emoji-uzbek {
+			text-align: center;
+			font-size: 90px;
+			margin-top: 10px;
+		}
+		.emoji-matn-uz {
+			text-align: center;
+			font-size: 27px;
+			margin-top: -70px;
+		}
+		.emoji-jahon {
+			text-align: center;
+			font-size: 90px;
+			margin-top: 10px;
+		}
+		.emoji-matn-jahon {
+			text-align: center;
+			font-size: 27px;
+			margin-top: -70px;
+		}
+		.btn-window {
+			color: white;
+			width: 35px;
+			height: 35px;
+			position: absolute;
+			top: 11px;
+			left: 5px;
+		}
+		.btn-window:hover {
+			color: blue;
+		}
+		.a-center-one {
+			background-color: black;
+			position: absolute;
+			right: 0;
+			left: 0;
+			height: 110px;
+		}
+		.sidebar {
+			position: fixed;
+			top: 0;
+			left: -350px;
+			width: 200px;
+			height: 100%;
+			background-color: #333;
+			color: white;
+			padding: 20px;
+			transition: left 0.7s ease;
+			z-index: 1000;
+		}
+		.sidebar.active {
+			left: 0;
+		}
+		.close-btn {
+			border-radius: 5px;
+			border: none;
+			background-color: red;
+			padding: 5px 10px;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 16px;
+		}
+		a {
+			font-size: 19px;
+		}
+		.btn-ulashish {
+			background-color: red;
+			color: blue;
+			border-radius: 8px;
+			border: 2px solid black;
+			width: 100px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+
+		<svg onclick="toggleSidebar()" class="btn-window" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+ 		<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		</svg>
+
+		<div class="sidebar" id="sidebar">
+			<button class="close-btn" onclick="toggleSidebar()">X</button>
+			<h1>Test fanlari:</h1>
+
+			<ul>
+				<li><a href="#">Maqolalar</a></li>
+
+				<li><a href="#">Aloqa</a></li>
+
+				<li><a href="#">KIRISH</a></li>
+			</ul>
+
+			<hr >
+
+			<button class="btn-ulashish">Ulashish</button><br><br>
+
+			<button class="btn-ulashish">Haqida</button><br><br>
+
+			<button class="btn-ulashish">Yangiliklar</button>
+		</div>
+
+		<script>
+			function toggleSidebar() {
+
+				document.getElementById('sidebar').classList.toggle('active');
+			}
+		</script>
+
+		<button title="chap tomondan oyna ochiladi." class="button-menu">Ulashish</button>
+
+		<button title="bu yerdan foydalanishingiz uchun parol va login kerak!" class="btn-work">WorkSpace</button>
+
+		<button title="admin bilan aloqa qilish" class="btn-contact">Aloqa</button>
+
+		<button title="WebEditor.add'ning maqolalari va fikrlari!!!" class="btn-maqola">Maqolalar</button>
+
+		<button title="test ishlash uchun bosiing." class="btn-kirish" onclick="window.location.href='kirishone.html'">KIRISH</button>
+	</header>
+
+	<h1 class="h-center-1">
+		"vebtest" - websaytiga <br> xushkelibsiz!!!
+	</h1>
+
+	<h1 class="h-center-2">
+		Test ishlashni hohlasangiz "KIRISH" <br> tugmasini bosing!
+	</h1>
+
+	<hr>
+
+	<h2 class="test-fanlar">Bu fanlardan test olinadi: </h2>
+
+	<p class="emoji-matem">🔢<p class="emoji-matn-matem">MATEMATIKA</p></p>
+
+	<p class="emoji-english">🌐<p class="emoji-matn-english">INGILIZ TILI</p>
+
+	<p class="emoji-biologiya">🌍<p class="emoji-matn-bio">BIOLOGIYA</p>
+
+	<p class="emoji-uzbek">🇺🇿<p class="emoji-matn-uz">O'zbekiston <br> tarixi</p>
+
+	<p class="emoji-jahon">🗺️<p class="emoji-matn-jahon">Jahon <br> tarixi</p>
+
+	<hr >
+
+	<div class="a-center-one">
+
+		<a href="#">Matematika</a><br>
+		<a href="#">Ingiliz tili</a><br>
+		<a href="#">Biologiya</a><br>
+		<a href="#">O'zbekiston taixi</a><br>
+		<a href="#">Jahon tarixi</a><br>	
+		
+	</div>
+</body>
+</html>
