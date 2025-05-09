@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Veb - Test</title>
+  <style>
+    body {
+      background-color: lightyellow;
+      font-family: sans-serif;
+    }
+
+    .container {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .select-subject {
+      text-align: center;
+      width: 300px;
+      font-size: 20px;
+      padding: 5px;
+      border: 2px solid black;
+    }
+
+    .topics-container {
+      margin-top: 30px;
+      display: inline-block;
+      text-align: left;
+      border: 2px solid red;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: white;
+    }
+
+    .topics-container label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      width: 340px;
+    }
+
+    .btn-start {
+      margin-top: 30px;
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .test-count-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .test-count-select {
+     font-size: 18px;
+     padding: 5px 10px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Fan tanlang:</h2>
+    <select id="subjectSelect" class="select-subject">
+      <option value="">-- Fan tanlang --</option>
+      <option value="matematika">Matematika</option>
+      <option value="ingiliz">Ingliz tili</option>
+      <option value="biologiya">Biologiya</option>
+      <option value="uzb_tarixi">O'zbekiston tarixi</option>
+      <option value="jahon_tarixi">Jahon tarixi</option>
+    </select><br><br>
+
+    <div id="topicsBox" class="topics-container">Fan tanlaganigizdan <br> so'ng mavzular chiqadi</div><br><br>
+
+    <div class="test-count-container">
+     <h3>Test soni:</h3>
+     <select id="testCount" class="test-count-select">
+     <option value="10">10</option>
+     <option value="15">15</option>
+     <option value="20">20</option>
+     </select>
+    </div>
+
+
+
+    <hr> 
+
+    <button class="btn-start">BOSHLASH</button>
+  </div>
+
+  <script>
+    const topics = {
+      matematika: [
+        "Algebraik ifodalar",
+        "Algebraik kasrlarni qo'shish va ayirish",
+        "Birinchi darajali tengsizliklar",
+        "Sonli oraliqlar",
+        "Modullar",
+        "Kvadrat tenglamalar",
+        "Viyet teoremasi",
+        "Bikvadrat tenglamalar",
+        "Kombinatorika"
+      ],
+      ingiliz: [
+        "Present simple",
+        "Past simple",
+        "Future simple",
+        "Reading",
+        "Prepositions",
+        "Phrasal verbs",
+        "Questions",
+        "Adverb vs Adjective",
+        "Have to / Had to"
+      ],
+      biologiya: [
+        "Tayanch-harakatlanish sistemasi",
+        "Qon aylanish sistemasi",
+        "Nafas olish",
+        "Ovqat hazm qilish",
+        "Energiya almashinuvi",
+        "Nerv sistemasi",
+        "Teri va siydik ajratish",
+        "Ko'payish va rivojlanish"
+      ],
+      uzb_tarixi: [
+        "Qadimgi davrlar",
+        "Amir Temur va Temuriylar",
+        "Sovet davri",
+        "Mustaqillik yillari"
+      ],
+      jahon_tarixi: [
+        "Qadimgi dunyo",
+        "O‘rta asrlar",
+        "Yangi davr",
+        "XX asr urushlari",
+        "Zamonaviy davr"
+      ]
+    };
+
+    const subjectSelect = document.getElementById("subjectSelect");
+    const topicsBox = document.getElementById("topicsBox");
+
+    subjectSelect.addEventListener("change", function () {
+      const selectedSubject = subjectSelect.value;
+
+      // Avvalgi mavzularni tozalaymiz
+      topicsBox.innerHTML = "";
+
+      if (topics[selectedSubject]) {
+        topics[selectedSubject].forEach(topic => {
+          const label = document.createElement("label");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.value = topic;
+          checkbox.name = "mavzu";
+
+          label.appendChild(checkbox);
+          label.append(" " + topic);
+          topicsBox.appendChild(label);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
