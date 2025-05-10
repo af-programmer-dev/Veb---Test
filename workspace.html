@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Work - Space</title>
+
+	<style>
+		body {
+			background-color: lightyellow;
+		}
+		.center-input-label {
+			text-align: center;
+			margin-top: 200px;
+		}
+		label {
+			font-size: 22px;
+		}
+		input {
+			width: 300px;
+		 height: 35px;
+		 border: 2px solid red;
+		 border-radius: 15px;
+		 font-size: 16px;
+		}
+		.btn-tasdiqlash {
+			background-color: blue;
+			color: white;
+			width: 200px;
+			height: 25px;
+			border-radius: 10px;
+			border: none;
+			text-align: center;
+			cursor: pointer;
+		}
+		#result {
+			margin-top: 20px;
+			text-align: center;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="center-input-label">
+		<label for="login">Loginni kiriting:</label><br>
+		<input id="login-input" type="text" name="login-i" placeholder="Login"><br><br>
+
+		<label for="parol">Parolni kiriting:</label><br>
+		<input id="parol-input" type="password" name="login-i" placeholder="Parol"><br><br>
+
+		<a title="Orqaga qaytish/Testga qaytish" href="wellcome.html">@VebTest.uz</a><br><br>
+
+		<button class="btn-tasdiqlash" onclick="checkLogin()">TASDIQLASH</button>
+	</div>
+
+	<div id="result"></div>
+
+	<script>
+		function checkLogin() {
+			// To'g'ri login va parol
+			const correctLogin = "@fomati.princess";
+			const correctPassword = "2010.08.20.add.AFWA";
+
+			// Foydalanuvchi kiritgan login va parol
+			const loginInput = document.getElementById("login-input").value;
+			const passwordInput = document.getElementById("parol-input").value;
+
+			// Natijani ko'rsatish
+			const resultDiv = document.getElementById("result");
+
+			if (loginInput === correctLogin && passwordInput === correctPassword) {
+				// Agar login va parol to'g'ri bo'lsa, yangi sahifaga yo'naltiramiz
+				window.location.href = "work-one.html";  // work-one.html sahifasiga yo'naltirish
+			} else {
+				resultDiv.innerHTML = "Xato login yoki parol. Iltimos, qaytadan urining!";
+				resultDiv.style.color = "red";
+
+				// Login va parolni o'chirish
+				document.getElementById("login-input").value = "";
+				document.getElementById("parol-input").value = "";
+			}
+		}
+	</script>
+</body>
+</html>
